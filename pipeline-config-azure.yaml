@@ -1,0 +1,14 @@
+pipeline:
+  name: "Azure Pipeline"
+  description: "This is an Azure DevOps pipeline configuration file."
+  buildConfigs:
+  - name: "my-app"
+    repository:
+      url: "https://github.com/your/repo.git"
+      defaultBranch: "main"
+    webhook:
+      triggerOnPush: true
+  triggers:
+    - type: "AzureWebhook"
+      azureWebhook:
+        secret: "your-webhook-secret"
